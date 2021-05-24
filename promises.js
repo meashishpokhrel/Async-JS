@@ -20,19 +20,19 @@ function createPost (post){
     return new Promise ((resolve, reject) => {
         setTimeout(()=>{
             posts.push(post);
-            let err =false;
+            let err =true;
 
             if (!err){
                 resolve();
             }
             else{
-                reject();
+                reject("SOmething Wrong");
             }
         }, 2000);
     });
     
 }
 
-createPost ({title: "post js", description: "this is one"}).then(getPost);
+createPost ({title: "post js", description: "this is one"}).then(getPost).catch(error => console.log (error));
 
 console.log("hello promise");
