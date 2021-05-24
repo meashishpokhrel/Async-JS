@@ -20,7 +20,7 @@ function createPost (post){
     return new Promise ((resolve, reject) => {
         setTimeout(()=>{
             posts.push(post);
-            let err =true;
+            let err =false;
 
             if (!err){
                 resolve();
@@ -36,3 +36,6 @@ function createPost (post){
 createPost ({title: "post js", description: "this is one"}).then(getPost).catch(error => console.log (error));
 
 console.log("hello promise");
+
+const promise2 = fetch ("https://jsonplaceholder.typicode.com/users")
+.then (res=> { console.log(res.json()) })
